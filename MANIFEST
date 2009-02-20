@@ -1,6 +1,0 @@
-Makefile.PL
-Build.PL
-lib/String/Fraction.pm
-MANIFEST			This list of files
-t/basic.t
-META.yml
