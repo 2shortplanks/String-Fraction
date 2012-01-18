@@ -4,7 +4,7 @@ use base qw(HTML::Fraction);
 use strict;
 use warnings;
 
-our $VERSION = "0.20";
+our $VERSION = "0.30";
 
 # Our superclass sometimes uses named
 my %name2char = (
@@ -46,6 +46,8 @@ by the unicode characters for those fractions.
 =head1 AUTHOR
 
 Copyright Mark Fowler <mark@twoshortplanks.com> and Fotango 2005.
+
+Copyright Mark Fowler <mark@twoshortplanks.com> 2012.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
