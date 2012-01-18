@@ -1,6 +1,6 @@
 use inc::Module::Install;
 
-name           'String::Fraction';
+name           'String-Fraction';
 all_from       'lib/String/Fraction.pm';
 
 requires       'HTML::Fraction'  => 0.40;
