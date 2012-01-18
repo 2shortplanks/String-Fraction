@@ -6,25 +6,24 @@ use warnings;
 
 our $VERSION = "0.20";
 
+# Our superclass sometimes uses named
 my %name2char = (
   '1/4'  => "\x{00BC}",
   '1/2'  => "\x{00BD}",
   '3/4'  => "\x{00BE}",
-  '1/3'  => "\x{2153}",
-  '2/3'  => "\x{2154}",
-  '1/5'  => "\x{2155}",
-  '2/5'  => "\x{2156}",
-  '3/5'  => "\x{2157}",
-  '4/5'  => "\x{2158}",
-  '1/6'  => "\x{2159}",
-  '5/6'  => "\x{215A}",
-  '1/8'  => "\x{215B}",
-  '3/8'  => "\x{215C}",
-  '5/8'  => "\x{215D}",
-  '7/8'  => "\x{215E}",
 );
 
-sub _name2char { shift; $name2char{shift()} }
+sub _name2char {
+  my $self = shift;
+  my $str = shift;
+
+  my $entity = $self->SUPER::_name2char($str);
+  if ($entity =~ /\A &\#(\d+); \z/x) {
+    return chr($1);
+  }
+
+  return $name2char{ $str }
+}
 
 =head1 NAME
 
